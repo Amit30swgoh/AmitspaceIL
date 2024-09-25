@@ -11,35 +11,25 @@ export function initTools() {
             const lightYearsInput = document.getElementById('lightYears').value;
             const lightYears = parseFloat(lightYearsInput);
 
-            if (!isNaN(lightYears)) {
+            if (!isNaN(lightYears) && lightYears >= 0) {
                 const kilometers = lightYears * 9.461e+12; 
-                result.textContent = `${lightYears} light-years is approximately ${kilometers.toExponential(2)} kilometers.`;
+                result.textContent = `${lightYears} light-year(s) is approximately ${kilometers.toExponential(2)} kilometers.`;
             } else {
-                result.textContent = "Please enter a valid number.";
+                result.textContent = "Please enter a valid non-negative number.";
             }
         });
     } else {
         console.error('Distance calculator form or result element not found.');
     }
 
-    // Contact Form Handling
+    // Contact Form Handling (Optional)
     const contactForm = document.querySelector('#contact form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-
-            // Replace these values with your EmailJS service ID and template ID
-            const serviceID = 'YOUR_SERVICE_ID';
-            const templateID = 'YOUR_TEMPLATE_ID';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    alert('Message sent successfully!');
-                    contactForm.reset();
-                }, (err) => {
-                    alert('Failed to send message. Please try again.');
-                    console.error('EmailJS Error:', err);
-                });
+            // Implement form submission logic here (e.g., using EmailJS)
+            alert('Thank you for your message!');
+            contactForm.reset();
         });
     }
 }
