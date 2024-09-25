@@ -1,11 +1,18 @@
-// tools.js
+// scripts/tools.js
+
 export function initTools() {
     const distanceCalculator = document.getElementById('distanceCalculator');
     const result = document.getElementById('result');
 
+    if (!distanceCalculator || !result) {
+        console.error('Distance calculator form or result element not found.');
+        return;
+    }
+
     distanceCalculator.addEventListener('submit', (event) => {
         event.preventDefault(); 
-        const lightYears = parseFloat(document.getElementById('lightYears').value);
+        const lightYearsInput = document.getElementById('lightYears').value;
+        const lightYears = parseFloat(lightYearsInput);
 
         if (!isNaN(lightYears)) {
             const kilometers = lightYears * 9.461e+12; 
