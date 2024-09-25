@@ -1,8 +1,15 @@
-// visualizations.js
+// scripts/visualizations.js
 import { astronomyStats } from './data.js';
 
 export function initVisualizations() {
-    const ctx = document.getElementById('statsChart').getContext('2d');
+    const statsChartElement = document.getElementById('statsChart');
+
+    if (!statsChartElement) {
+        console.error('Canvas element with id "statsChart" not found.');
+        return;
+    }
+
+    const ctx = statsChartElement.getContext('2d');
     const statsChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -17,6 +24,15 @@ export function initVisualizations() {
         },
         options: {
             responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Astronomical Discoveries Over Years'
+                }
+            },
             scales: {
                 y: { 
                     beginAtZero: true,
