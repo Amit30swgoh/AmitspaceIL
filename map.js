@@ -8,12 +8,12 @@ export function initMap() {
         return;
     }
 
-    // Initialize the map centered at (0,0) with zoom level 2
-    const map = L.map('map').setView([0, 0], 2); 
+    // Initialize the map centered at (29.7604, -95.3698) - Huntsville, Texas
+    const map = L.map('map').setView([29.7604, -95.3698], 10); 
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
     // Add a marker for Huntsville, Texas
