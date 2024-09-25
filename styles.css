@@ -145,7 +145,7 @@ header p.lead {
 /* Canvas for Chart.js */
 #statsChart {
     max-width: 100%;
-    height: auto;
+    height: 400px; /* Define a fixed height to ensure visibility */
 }
 
 /* ========================= */
@@ -285,4 +285,16 @@ textarea:focus {
 input,
 textarea {
     transition: all 0.3s ease;
+}
+
+/* ========================= */
+/* Map Section Styling       */
+/* ========================= */
+
+/* Ensure the map container is responsive */
+#map {
+    width: 100%;
+    height: 500px; /* Ensure the map has a height */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
