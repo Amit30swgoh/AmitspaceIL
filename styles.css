@@ -3,9 +3,7 @@
 /* ========================= */
 
 /* Reset some default styles */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -16,16 +14,15 @@ body, html {
     font-family: 'Arial', sans-serif; /* You can customize the font family */
     line-height: 1.6;
     color: #333;
+    background-color: #fff;
 }
 
-/* Remove default list styles */
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Remove default link styles */
 a {
     text-decoration: none;
     color: inherit;
@@ -36,8 +33,7 @@ a {
 /* ========================= */
 
 .navbar {
-    /* Ensure navbar has a higher z-index to stay above other elements */
-    z-index: 1000;
+    z-index: 1000; /* Ensure navbar stays above other elements */
 }
 
 .navbar-brand {
@@ -47,6 +43,7 @@ a {
 
 .nav-link {
     transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
 }
 
 .nav-link:hover,
@@ -54,10 +51,13 @@ a {
     color: #0d6efd; /* Bootstrap primary color for hover effect */
 }
 
-/* Active nav link styling */
 .nav-link.active {
     color: #0d6efd;
     font-weight: 600;
+}
+
+.navbar-toggler {
+    border: none;
 }
 
 /* ========================= */
@@ -77,7 +77,6 @@ header {
     position: relative;
 }
 
-/* Overlay for better text visibility */
 header::before {
     content: '';
     position: absolute;
@@ -85,7 +84,7 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    background: rgba(0, 0, 0, 0.5); /* Overlay for better text visibility */
     z-index: 1;
 }
 
@@ -135,26 +134,33 @@ header p.lead {
 
 #stats {
     background-color: #f8f9fa; /* Light grey background */
+    padding: 4rem 0;
 }
 
 #stats h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-/* Canvas for Chart.js */
 #statsChart {
     max-width: 100%;
     height: 400px; /* Define a fixed height to ensure visibility */
+    margin: 0 auto;
 }
 
 /* ========================= */
 /* Tools Section Styling     */
 /* ========================= */
 
+#tools {
+    padding: 4rem 0;
+}
+
 #tools h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 #tools form {
@@ -170,27 +176,76 @@ header p.lead {
 
 #tools input,
 #tools textarea {
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
     border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#tools input:focus,
+#tools textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    outline: none;
 }
 
 #tools .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    border: none;
+    cursor: pointer;
 }
 
-/* Result styling */
+#tools .btn-success {
+    background-color: #198754;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#tools .btn-success:hover {
+    background-color: #157347;
+}
+
 #result {
     font-size: 1.1rem;
     font-weight: 600;
+    margin-top: 1rem;
+    color: #0d6efd;
+    text-align: center;
+}
+
+/* ========================= */
+/* Map Section Styling       */
+/* ========================= */
+
+#map {
+    width: 100%;
+    height: 500px; /* Ensure the map has a height */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+#tools h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 /* ========================= */
 /* Contact Section Styling   */
 /* ========================= */
 
+#contact {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 4rem 0;
+}
+
 #contact h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 #contact form {
@@ -204,12 +259,32 @@ header p.lead {
 
 #contact input,
 #contact textarea {
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
     border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    outline: none;
 }
 
 #contact .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #0d6efd;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#contact .btn:hover {
+    background-color: #0b5ed7;
 }
 
 /* ========================= */
@@ -220,7 +295,7 @@ footer {
     background-color: #343a40; /* Dark background */
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     position: relative;
 }
 
@@ -248,9 +323,17 @@ footer {
     header p.lead {
         font-size: 1rem;
     }
+
+    #statsChart {
+        height: 300px; /* Adjust chart height on smaller screens */
+    }
+
+    #map {
+        height: 300px; /* Adjust map height on smaller screens */
+    }
 }
 
-/* About Section Columns on Small Screens */
+/* About Section Responsive */
 @media (max-width: 768px) {
     #about .col-md-6 {
         margin-bottom: 2rem;
@@ -261,40 +344,46 @@ footer {
 /* Additional Enhancements   */
 /* ========================= */
 
-/* Button Hover Effects */
-.btn-primary:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
-}
-
-.btn-success:hover {
-    background-color: #198754;
-    border-color: #157347;
-}
-
-/* Form Input Focus Styles */
-input:focus,
-textarea:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-}
-
-/* Add transition to interactive elements for smoothness */
-.nav-link,
-.btn,
-input,
-textarea {
+/* Button Transitions for Smooth Hover Effects */
+.btn-primary,
+.btn-success,
+.btn {
     transition: all 0.3s ease;
 }
 
-/* ========================= */
-/* Map Section Styling       */
-/* ========================= */
+/* Link Hover Effects */
+.nav-link:hover,
+.nav-link:focus {
+    color: #0d6efd;
+}
 
-/* Ensure the map container is responsive */
-#map {
-    width: 100%;
-    height: 500px; /* Ensure the map has a height */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Responsive Adjustments for Map Text */
+#tools h3 {
+    font-size: 1.3rem;
+}
+
+#contact h2 {
+    font-size: 2rem;
+}
+
+/* Add subtle animations for better user experience */
+header h1,
+header p.lead,
+#about h2,
+#stats h2,
+#tools h2,
+#tools h3,
+#contact h2 {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
