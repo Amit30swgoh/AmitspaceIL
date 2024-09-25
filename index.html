@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AmitspaceIL - Astronomy & JWST</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">AmitspaceIL</a>
@@ -20,56 +19,78 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About JWST</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#stats">Statistics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stats">Fascinating Astronomy Stats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tools">Data Analysis Tools</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="bg-primary text-white text-center py-5">
         <h1>Welcome to AmitspaceIL</h1>
         <p>Exploring the Universe with the James Webb Space Telescope</p>
     </header>
 
-    <!-- About Section -->
     <section id="about" class="container my-5">
         <h2>About the James Webb Space Telescope</h2>
-        <p><!-- Detailed information about JWST --></p>
+        <div class="row"> 
+            <div class="col-md-6">
+                <p>
+                    The James Webb Space Telescope (JWST) is a large, infrared-optimized space telescope launched in December 2021. As the successor to the Hubble Space Telescope, JWST is designed to observe the most distant objects in the universe, providing unprecedented insights into the early universe, galaxy formation, and the atmospheres of exoplanets. 
+                </p>
+                <p> 
+                    With its large mirror and advanced instruments, JWST is capable of collecting more light and observing fainter objects than any previous telescope. This allows it to peer back in time to the earliest galaxies, study the formation of stars and planets, and search for signs of life in the atmospheres of other worlds. 
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="path/to/jwst-image.jpg" alt="James Webb Space Telescope" class="img-fluid"> 
+            </div>
+        </div>
     </section>
 
-    <!-- Statistics Section -->
     <section id="stats" class="bg-light py-5">
         <div class="container">
-            <h2>Astronomy Statistics & Data</h2>
+            <h2>Fascinating Astronomy Statistics</h2>
+            <p>Explore key figures that highlight the vastness of the cosmos and the impact of JWST's discoveries.</p>
             <canvas id="statsChart"></canvas>
         </div>
     </section>
 
-    <!-- Tools Section -->
     <section id="tools" class="container my-5">
         <h2>Advanced Data Analysis Tools</h2>
-        <!-- Interactive tools go here -->
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="bg-light py-5">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <!-- Contact form elements -->
-            </form>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Tool 1</h3>
+                <p>Brief description of Tool 1 and its capabilities.</p>
+                <a href="#" class="btn btn-primary">Explore Tool 1</a> 
+            </div>
+            <div class="col-md-4">
+                <h3>Tool 2</h3>
+                <p>Brief description of Tool 2 and its capabilities.</p>
+                <a href="#" class="btn btn-primary">Explore Tool 2</a> 
+            </div>
+            <div class="col-md-4">
+                <h3>Tool 3</h3>
+                <p>Brief description of Tool 3 and its capabilities.</p>
+                <a href="#" class="btn btn-primary">Explore Tool 3</a> 
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to collaborate? We'd love to hear from you!</p>
+            <form>
+                </form>
+        </div>
+    </section>
+
     <footer class="bg-dark text-white text-center py-3">
         &copy; 2024 AmitspaceIL. All rights reserved.
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/data.js"></script>
