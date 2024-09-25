@@ -75,9 +75,9 @@ header {
     justify-content: center;
     text-align: center;
     position: relative;
-    /* Overlay for better text visibility */
 }
 
+/* Overlay for better text visibility */
 header::before {
     content: '';
     position: absolute;
@@ -222,7 +222,6 @@ footer {
     text-align: center;
     padding: 1rem 0;
     position: relative;
-    /* Removed bottom: 0 and width: 100% for better positioning */
 }
 
 /* ========================= */
