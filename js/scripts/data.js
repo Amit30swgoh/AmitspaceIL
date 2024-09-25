@@ -1,23 +1,23 @@
 // data.js
 
-// Example: Fetching JWST mission data
-async function fetchJWSTData() {
-    try {
-        const response = await fetch('assets/data/jwst-data.json');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching JWST data:', error);
-    }
-}
+// Sample JWST Mission Data (Replace with your actual data)
+const jwstData = {
+    launchDate: "December 25, 2021",
+    primaryMirrorSize: "6.5 meters",
+    orbit: "L2 Lagrange point",
+    instruments: ["NIRCam", "NIRSpec", "MIRI", "FGS/NIRISS"],
+    scientificGoals: [
+        "Study the first galaxies formed in the early universe",
+        "Observe the formation of stars and planetary systems",
+        "Analyze the atmospheres of exoplanets",
+        "..."
+    ]
+};
 
-// Example: Fetching astronomical statistics
-async function fetchAstronomyStats() {
-    try {
-        const response = await fetch('assets/data/astronomy-stats.json');
-        const stats = await response.json();
-        return stats;
-    } catch (error) {
-        console.error('Error fetching astronomy statistics:', error);
-    }
-}
+// Sample Astronomy Statistics (Replace with your actual data)
+const astronomyStats = {
+    years: [2018, 2019, 2020, 2021, 2022], // Years
+    discoveries: [1200, 1500, 1800, 2000, 2300] // Number of discoveries per year
+};
+
+export { jwstData, astronomyStats };
