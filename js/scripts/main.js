@@ -1,10 +1,14 @@
-// main.js
+// scripts/main.js
 import { initVisualizations } from './visualizations.js';
 import { initTools } from './tools.js';
-import { initMap } from './map.js'; // Assuming you create a separate map.js file
+import { initMap } from './map.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    initVisualizations();
-    initTools();
-    initMap(); 
+    try {
+        initVisualizations();
+        initTools();
+        initMap();
+    } catch (error) {
+        console.error('Error initializing modules:', error);
+    }
 });
