@@ -4,41 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AmitspaceIL - Astronomy & JWST</title>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css"> 
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> 
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Smooth Scroll CSS (Optional for smoother scrolling effect) -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container"> 
             <a class="navbar-brand" href="#">AmitspaceIL</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About JWST</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#stats">Fascinating Astronomy Stats</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tools">Data Analysis Tools</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <!-- Updated href for 'Home' to link to top -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#top">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About JWST</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stats">Fascinating Astronomy Stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tools">Data Analysis Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="bg-primary text-white text-center py-5">
+    <!-- Hero Section -->
+    <header id="top" class="bg-primary text-white text-center py-5" style="margin-top: 56px;">
+        <!-- Added margin-top to account for fixed navbar height -->
         <div class="container"> 
             <h1>Welcome to AmitspaceIL</h1>
             <p class="lead">Exploring the Universe with the James Webb Space Telescope</p>
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="container my-5">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="images/jwst.jpg" alt="James Webb Space Telescope" class="img-fluid"> 
+                <img src="assets/images/jwst.jpg" alt="James Webb Space Telescope" class="img-fluid rounded shadow">
             </div>
-            <div class="col-md
+            <div class="col-md-6">
+                <h2>About the James Webb Space Telescope</h2>
+                <p>The James Webb Space Telescope (JWST) is a large, space-based observatory optimized for infrared wavelengths. It is the scientific successor to the Hubble Space Telescope, and it is designed to look further into the universe than ever before, unveiling the first galaxies formed after the Big Bang and providing unprecedented insights into the formation of stars and planetary systems.</p>
+                <a href="#contact" class="btn btn-primary mt-3">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Astronomy Statistics & Data</h2>
+            <canvas id="statsChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="container my-5">
+        <h2 class="text-center mb-4">Advanced Data Analysis Tools</h2>
+        <!-- Example Tool: Light-Year Distance Calculator -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="distanceCalculator">
+                    <div class="mb-3">
+                        <label for="lightYears" class="form-label">Enter Distance in Light-Years:</label>
+                        <input type="number" class="form-control" id="lightYears" required min="0">
+                    </div>
+                    <button type="submit" class="btn btn-success">Calculate</button>
+                </form>
+                <p id="result" class="mt-3"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        &copy; 2024 AmitspaceIL. All rights reserved.
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/visualizations.js"></script>
+    <script src="scripts/tools.js"></script>
+
+</body>
+</html>
