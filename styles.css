@@ -1,31 +1,289 @@
+/* ========================= */
+/* Reset and Base Styles     */
+/* ========================= */
+
 /* Reset some default styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif; /* You can customize the font family */
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Hero Section Styling */
+/* Remove default list styles */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================= */
+/* Navbar Styling            */
+/* ========================= */
+
+.navbar {
+    /* Ensure navbar has a higher z-index to stay above other elements */
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #0d6efd; /* Bootstrap primary color for hover effect */
+}
+
+/* Active nav link styling */
+.nav-link.active {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+/* ========================= */
+/* Hero Section Styling      */
+/* ========================= */
+
 header {
     background-image: url('assets/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
-}
-
-/* Navbar Styling */
-.navbar-brand {
-    font-weight: bold;
-}
-
-/* Section Headings */
-section h2 {
-    margin-bottom: 20px;
-}
-
-/* Footer Styling */
-footer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: relative;
+    /* Overlay for better text visibility */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 1;
+}
+
+header > .container {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+header p.lead {
+    font-size: 1.25rem;
+}
+
+/* ========================= */
+/* About Section Styling     */
+/* ========================= */
+
+#about img {
     width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+#about .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* ========================= */
+/* Statistics Section Styling*/
+/* ========================= */
+
+#stats {
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+#stats h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Canvas for Chart.js */
+#statsChart {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================= */
+/* Tools Section Styling     */
+/* ========================= */
+
+#tools h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#tools form {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#tools label {
+    font-weight: 600;
+}
+
+#tools input,
+#tools textarea {
+    border-radius: 4px;
+}
+
+#tools .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* Result styling */
+#result {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ========================= */
+/* Contact Section Styling   */
+/* ========================= */
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact label {
+    font-weight: 600;
+}
+
+#contact input,
+#contact textarea {
+    border-radius: 4px;
+}
+
+#contact .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* ========================= */
+/* Footer Styling            */
+/* ========================= */
+
+footer {
+    background-color: #343a40; /* Dark background */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    /* Removed bottom: 0 and width: 100% for better positioning */
+}
+
+/* ========================= */
+/* Responsive Styling        */
+/* ========================= */
+
+/* Mobile Navbar Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* Hero Section Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p.lead {
+        font-size: 1rem;
+    }
+}
+
+/* About Section Columns on Small Screens */
+@media (max-width: 768px) {
+    #about .col-md-6 {
+        margin-bottom: 2rem;
+    }
+}
+
+/* ========================= */
+/* Additional Enhancements   */
+/* ========================= */
+
+/* Button Hover Effects */
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-success:hover {
+    background-color: #198754;
+    border-color: #157347;
+}
+
+/* Form Input Focus Styles */
+input:focus,
+textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Add transition to interactive elements for smoothness */
+.nav-link,
+.btn,
+input,
+textarea {
+    transition: all 0.3s ease;
 }
