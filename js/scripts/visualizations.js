@@ -1,7 +1,14 @@
 // scripts/visualizations.js
-import { astronomyStats } from './data.js';
+import { fetchAstronomyStats } from './data.js';
 
-export function initVisualizations() {
+export async function initVisualizations() {
+    const astronomyStats = await fetchAstronomyStats();
+
+    if (!astronomyStats) {
+        console.error('Astronomy statistics data not available.');
+        return;
+    }
+
     const statsChartElement = document.getElementById('statsChart');
 
     if (!statsChartElement) {
