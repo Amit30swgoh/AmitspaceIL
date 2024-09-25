@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AmitspaceIL - Astronomy & JWST</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> 
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+        <div class="container"> 
             <a class="navbar-brand" href="#">AmitspaceIL</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About JWST</a></li>
                     <li class="nav-item"><a class="nav-link" href="#stats">Fascinating Astronomy Stats</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tools">Data Analysis Tools</a></li>
@@ -31,92 +30,15 @@
     </nav>
 
     <header class="bg-primary text-white text-center py-5">
-        <h1>Welcome to AmitspaceIL</h1>
-        <p>Exploring the Universe with the James Webb Space Telescope</p>
+        <div class="container"> 
+            <h1>Welcome to AmitspaceIL</h1>
+            <p class="lead">Exploring the Universe with the James Webb Space Telescope</p>
+        </div>
     </header>
 
     <section id="about" class="container my-5">
-        <h2>About the James Webb Space Telescope</h2>
-        <div class="row"> 
-            <div class="col-md-6">
-                <p>
-                    The James Webb Space Telescope (JWST) is a large, infrared-optimized space telescope launched in December 2021. As the successor to the Hubble Space Telescope, JWST is designed to observe the most distant objects in the universe, providing unprecedented insights into the early universe, galaxy formation, and the atmospheres of exoplanets. 
-                </p>
-                <p> 
-                    With its large mirror and advanced instruments, JWST is capable of collecting more light and observing fainter objects than any previous telescope. This allows it to peer back in time to the earliest galaxies, study the formation of stars and planets, and search for signs of life in the atmospheres of other worlds. 
-                </p>
-            </div>
-            <div class="col-md-6">
-                <img src="path/to/jwst-image.jpg" alt="James Webb Space Telescope" class="img-fluid"> 
-            </div>
-        </div>
-    </section>
-
-    <section id="stats" class="bg-light py-5">
-        <div class="container">
-            <h2>Fascinating Astronomy Statistics</h2>
-            <p>Explore key figures that highlight the vastness of the cosmos and the impact of JWST's discoveries.</p>
-            <canvas id="statsChart"></canvas>
-        </div>
-    </section>
-
-    <section id="tools" class="container my-5">
-        <h2>Advanced Data Analysis Tools</h2>
         <div class="row">
-            <div class="col-md-4">
-                <h3>Tool 1</h3>
-                <p>Brief description of Tool 1 and its capabilities.</p>
-                <a href="#" class="btn btn-primary">Explore Tool 1</a> 
+            <div class="col-md-6">
+                <img src="images/jwst.jpg" alt="James Webb Space Telescope" class="img-fluid"> 
             </div>
-            <div class="col-md-4">
-                <h3>Tool 2</h3>
-                <p>Brief description of Tool 2 and its capabilities.</p>
-                <a href="#" class="btn btn-primary">Explore Tool 2</a> 
-            </div>
-            <div class="col-md-4">
-                <h3>Tool 3</h3>
-                <p>Brief description of Tool 3 and its capabilities.</p>
-                <a href="#" class="btn btn-primary">Explore Tool 3</a> 
-            </div>
-
-            <div class="col-12 mt-4">
-                <h4>Light-Year Distance Calculator</h4> 
-                <form id="distanceCalculator">
-                    <div class="mb-3">
-                        <label for="lightYears" class="form-label">Enter Distance in Light-Years:</label>
-                        <input type="number" class="form-control" id="lightYears" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Calculate</button>
-                </form>
-                <p id="result" class="mt-3"></p>
-            </div>
-
-            <div class="col-12 mt-4"> 
-                <h4>Interactive Map</h4>
-                <div id="map" style="height: 400px;"></div> 
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="bg-light py-5">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Have questions or want to collaborate? We'd love to hear from you!</p>
-            <form>
-                </form>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-3">
-        &copy; 2024 AmitspaceIL. All rights reserved.
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
-    <script src="scripts/main.js"></script>
-    <script src="scripts/data.js"></script>
-    <script src="scripts/visualizations.js"></script>
-    <script src="scripts/tools.js"></script>
-</body>
-</html>
+            <div class="col-md
