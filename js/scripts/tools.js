@@ -22,14 +22,24 @@ export function initTools() {
         console.error('Distance calculator form or result element not found.');
     }
 
-    // Contact Form Handling (Optional)
+    // Contact Form Handling with EmailJS
     const contactForm = document.querySelector('#contact form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            // Implement form submission logic here (e.g., using EmailJS)
-            alert('Thank you for your message!');
-            contactForm.reset();
+
+            // Replace these values with your EmailJS service ID and template ID
+            const serviceID = 'YOUR_SERVICE_ID';
+            const templateID = 'YOUR_TEMPLATE_ID';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                }, (err) => {
+                    alert('Failed to send message. Please try again.');
+                    console.error('EmailJS Error:', err);
+                });
         });
     }
 }
