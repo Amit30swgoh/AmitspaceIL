@@ -1,4 +1,4 @@
-// data.js
+// scripts/data.js
 
 // Sample JWST Mission Data (Replace with your actual data)
 const jwstData = {
@@ -10,7 +10,7 @@ const jwstData = {
         "Study the first galaxies formed in the early universe",
         "Observe the formation of stars and planetary systems",
         "Analyze the atmospheres of exoplanets",
-        "..."
+        // Add more scientific goals as needed
     ]
 };
 
